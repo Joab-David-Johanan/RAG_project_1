@@ -4,7 +4,6 @@ import streamlit as st
 from pathlib import Path
 import sys
 import time
-import uuid
 
 # Add src to path
 sys.path.append(str(Path(__file__).parent))

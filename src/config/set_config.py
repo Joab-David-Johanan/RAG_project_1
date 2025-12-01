@@ -6,6 +6,7 @@ from langchain.chat_models import init_chat_model
 
 # Load environment variables
 load_dotenv()
+os.environ["USER_AGENT"] = os.getenv("USER_AGENT")
 
 class Config:
     """Configuration class for RAG system"""
@@ -17,7 +18,7 @@ class Config:
     LLM_MODEL = "openai:gpt-4o"
     
     # Document Processing
-    CHUNK_SIZE = 500
+    CHUNK_SIZE = 200
     CHUNK_OVERLAP = 50
     
     # Default URLs

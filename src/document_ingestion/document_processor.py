@@ -5,12 +5,6 @@ Document processing module for loading and splitting documents.
 import os
 from pathlib import Path
 from typing import List, Union
-
-from dotenv import load_dotenv
-load_dotenv()
-
-os.environ["USER_AGENT"] = os.getenv("USER_AGENT")
-
 from langchain_community.document_loaders import (
     WebBaseLoader,
     PyPDFLoader,
