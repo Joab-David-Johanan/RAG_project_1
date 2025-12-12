@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# environment variable file
+.env
+
+# vs code workspace
+RAG_project_1.code-workspace
+
+pyproject.toml
+.python-version
+main.py
+uv.lock
