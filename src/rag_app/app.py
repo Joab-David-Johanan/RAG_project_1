@@ -5,13 +5,10 @@ from pathlib import Path
 import sys
 import time
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent))
-
-from src.config.set_config import Config
-from src.document_ingestion.document_processor import DocumentProcessor
-from src.vectorstore.create_vectorstore import VectorStoreManager
-from src.graph_builder.build_graph import GraphBuilder
+from rag_app.config.set_config import Config
+from rag_app.document_ingestion.document_processor import DocumentProcessor
+from rag_app.vectorstore.create_vectorstore import VectorStoreManager
+from rag_app.graph_builder.build_graph import GraphBuilder
 
 # Page configuration
 st.set_page_config(
@@ -57,7 +54,7 @@ def initialize_rag():
         urls = Config.DEFAULT_URLS
         
         # Process documents
-        documents = doc_processor.process(urls)
+        documents = doc_processor.process([r"C:\Coding\Projects\RAG_project_1\data"])
         
         # Create vector store
         vector_store.create_vectorstore(documents)

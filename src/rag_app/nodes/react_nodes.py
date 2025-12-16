@@ -1,9 +1,8 @@
 """LangGraph nodes for RAG workflow with ReAct agent inside generate_answer."""
 
 from typing import List
-from src.state.rag_state import RAGState
+from rag_app.state.rag_state import RAGState
 
-from langchain_core.documents import Document
 from langchain_core.tools import Tool
 from langchain_core.messages import HumanMessage
 from langchain.agents import create_agent
