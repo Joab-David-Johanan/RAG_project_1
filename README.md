@@ -28,7 +28,7 @@ git clone https://github.com/Joab-David-Johanan/RAG_project_1
 pip install uv # or: pipx install uv
 ```
 
-### 3. Create a uv virtual environment
+### 3. Create a uv virtual environment and activate it
 
 ```bash
 uv venv rag_env

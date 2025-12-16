@@ -10,6 +10,10 @@ from rag_app.document_ingestion.document_processor import DocumentProcessor
 from rag_app.vectorstore.create_vectorstore import VectorStoreManager
 from rag_app.graph_builder.build_graph import GraphBuilder
 
+# Path resolution
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
+
 # Page configuration
 st.set_page_config(
     page_title="🤖 RAG Search",
@@ -50,11 +54,8 @@ def initialize_rag():
         )
         vector_store = VectorStoreManager()
         
-        # Use default URLs
-        urls = Config.DEFAULT_URLS
-        
-        # Process documents
-        documents = doc_processor.process([r"C:\Coding\Projects\RAG_project_1\data"])
+        # Perform data ingestion
+        documents = doc_processor.process([str(DATA_DIR)])
         
         # Create vector store
         vector_store.create_vectorstore(documents)

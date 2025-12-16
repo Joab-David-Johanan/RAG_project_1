@@ -92,8 +92,21 @@ class DocumentProcessor:
                 docs.extend(self.load_from_url(src))
 
             elif path.is_dir():
-                docs.extend(self.load_from_pdf_dir(path))
+                for file in path.iterdir():
+                    if not file.is_file():
+                        continue
 
+                suffix = file.suffix.lower()
+
+                if suffix == ".pdf":
+                    docs.extend(self.load_from_pdf(file))
+
+                elif suffix == ".txt":
+                    if self._txt_contains_urls(file):
+                        docs.extend(self.load_urls_from_txt(file))
+                    else:
+                        docs.extend(self.load_from_txt(file))
+                
             elif path.suffix.lower() == ".pdf":
                 docs.extend(self.load_from_pdf(path))
 
