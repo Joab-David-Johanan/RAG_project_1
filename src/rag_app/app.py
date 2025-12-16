@@ -72,6 +72,9 @@ def initialize_rag():
         return None, 0
 
 def main():
+
+    import streamlit as st
+
     """Main application"""
     init_session_state()
     
