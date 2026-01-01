@@ -2,7 +2,6 @@
 
 import streamlit as st
 from pathlib import Path
-import sys
 import time
 
 from rag_app.config.set_config import Config
